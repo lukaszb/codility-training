@@ -32,7 +32,7 @@ def solution(sizes, directions):
         else:
             stack.append(size)
 
-    print stack, escaped
+    #print stack, escaped
     return len(stack) + escaped
 
 

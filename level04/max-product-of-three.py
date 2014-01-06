@@ -17,23 +17,6 @@ def naive(nums):
 
 
 def solution(nums):
-    n = len(nums)
-    if n < 10:
-        return naive(nums)
-    nums.sort()
-    if nums[-3] > 0:
-        # All positives, we can use last 3 numbers
-        return product(*nums[-3:])
-    elif nums[-1] > 0:
-        # There are maximum 2 positives, rest is <= 0, so we take biggest
-        # positive and 2 lowest negatives
-        return nums[-1] * nums[0] * nums[1]
-    else:
-        # Take biggest negatives or zeros to get maximal value
-        return product(*nums[-3:])
-
-
-def solution(nums):
     has_zero = 0 in nums
     negatives = [num for num in nums if num < 0]
     positives = [num for num in nums if num > 0]
